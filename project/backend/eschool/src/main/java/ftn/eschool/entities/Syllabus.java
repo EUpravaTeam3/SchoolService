@@ -4,8 +4,7 @@ import ftn.eschool.entities.enums.SchoolType;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-
-import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 // lombok
@@ -19,9 +18,11 @@ public class Syllabus {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    @ManyToOne
     private EducationalSpecialization educationalSpecialization;
 
-    private List<Subject> subjects;
+    @OneToMany(mappedBy = "syllabus")
+    private Set<Subject> subjects;
 
     private Integer yearOrder;
 
@@ -29,7 +30,7 @@ public class Syllabus {
 
     private SchoolType schoolType;
 
-    private List<Student> students;
+    private Set<Student> students;
 
-
+    // todo: School_EducationalSpecialization
 }

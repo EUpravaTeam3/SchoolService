@@ -3,8 +3,7 @@ package ftn.eschool.entities;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-
-import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 // lombok
@@ -19,9 +18,11 @@ public class Subject {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    @ManyToOne
     private Syllabus syllabus;
 
-    private List<Mark> marks;
+    @OneToMany(mappedBy = "subject")
+    private Set<Mark> marks;
 
     private String name;
 

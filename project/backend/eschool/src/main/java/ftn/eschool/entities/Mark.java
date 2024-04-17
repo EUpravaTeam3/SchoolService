@@ -20,6 +20,7 @@ public class Mark {
 
     private Professor professor;
 
+    @ManyToOne
     private Subject subject;
 
     private Student student;
