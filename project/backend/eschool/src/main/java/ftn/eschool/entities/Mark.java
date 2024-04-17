@@ -12,7 +12,6 @@ import java.util.UUID;
 @Data
 
 @Entity
-@Table(name = "mark")
 public class Mark {
 
     @Id

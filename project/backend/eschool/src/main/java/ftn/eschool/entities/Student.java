@@ -1,6 +1,5 @@
 package ftn.eschool.entities;
 
-import ftn.eschool.entities.Person;
 import lombok.Data;
 
 import java.util.List;
