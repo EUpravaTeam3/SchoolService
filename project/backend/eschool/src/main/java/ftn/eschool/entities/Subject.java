@@ -3,6 +3,7 @@ package ftn.eschool.entities;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+
 import java.util.Set;
 import java.util.UUID;
 
@@ -11,7 +12,6 @@ import java.util.UUID;
 @Data
 
 @Entity
-@Table(name = "subject")
 public class Subject {
 
     @Id
@@ -19,6 +19,7 @@ public class Subject {
     private UUID id;
 
     @ManyToOne
+    @JoinColumn(name = "syllabus_id")
     private Syllabus syllabus;
 
     @OneToMany(mappedBy = "subject")

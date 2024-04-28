@@ -1,16 +1,27 @@
 package ftn.eschool.entities;
 
+import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.List;
+import java.util.Set;
 
 //Lombok
-@Data
+@Entity
 public class Student extends Person {
 
+    @ManyToMany
+    @JoinTable(
+            name = "syllabus_student",
+            joinColumns = @JoinColumn(name = "syllabus_id"),
+            inverseJoinColumns = @JoinColumn(name = "student_id")
+    )
+    private Set<Syllabus> syllabi;
 
-    private List<Syllabus> syllabi;
-    private Boolean finishedEelementarySchool;
+    @OneToMany(mappedBy = "student")
+    private Set<Mark> marks;
+
+    private Boolean finishedElementarySchool;
+
     private Boolean finishedHighSchool;
 
 

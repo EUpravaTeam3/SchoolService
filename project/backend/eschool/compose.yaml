@@ -1,10 +1,11 @@
 services:
   mysql:
-    image: 'mysql:latest'
+    image: 'mysql:8.0'
+    container_name: eschool_mysql
     environment:
-      - 'MYSQL_DATABASE=mydatabase'
-      - 'MYSQL_PASSWORD=secret'
-      - 'MYSQL_ROOT_PASSWORD=verysecret'
-      - 'MYSQL_USER=myuser'
+      - 'MYSQL_DATABASE=eschooldb'
+      - 'MYSQL_PASSWORD=eschoolpw'
+      - 'MYSQL_ROOT_PASSWORD=eschoolrootpw'
+      - 'MYSQL_USER=eschooluser'
     ports:
-      - '3306'
+      - '3306:3306'

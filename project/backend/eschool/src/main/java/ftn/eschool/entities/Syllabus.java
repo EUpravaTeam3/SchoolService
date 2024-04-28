@@ -4,6 +4,7 @@ import ftn.eschool.entities.enums.SchoolType;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+
 import java.util.Set;
 import java.util.UUID;
 
@@ -19,6 +20,7 @@ public class Syllabus {
     private UUID id;
 
     @ManyToOne
+    @JoinColumn(name = "educational_specialization_id", nullable = false)
     private EducationalSpecialization educationalSpecialization;
 
     @OneToMany(mappedBy = "syllabus")
@@ -28,9 +30,6 @@ public class Syllabus {
 
     private Integer yearOfIntroduction;
 
-    private SchoolType schoolType;
-
+    @ManyToMany(mappedBy = "syllabi")
     private Set<Student> students;
-
-    // todo: School_EducationalSpecialization
 }

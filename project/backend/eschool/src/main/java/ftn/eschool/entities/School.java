@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
-import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 // lombok
@@ -23,5 +23,6 @@ public class School {
 
     private SchoolType type;
 
-    private List<EducationalSpecialization> educationalSpecializations;
+    @OneToMany(mappedBy = "school")
+    private Set<EducationalSpecialization> educationalSpecializations;
 }

@@ -18,12 +18,17 @@ public class Mark {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    private Professor professor;
-
     @ManyToOne
+    @JoinColumn(name = "subject_id", nullable = false)
     private Subject subject;
 
-    private Student student;
+    @ManyToOne
+    @JoinColumn(name = "professor_id", nullable = false)
+    private Person professor;
+
+    @ManyToOne
+    @JoinColumn(name = "student_id", nullable = false)
+    private Person student;
 
     private Integer value;
 

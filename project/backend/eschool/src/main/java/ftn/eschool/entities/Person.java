@@ -1,17 +1,15 @@
 package ftn.eschool.entities;
 
 import ftn.eschool.entities.enums.Gender;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
 @Table(name = "person")
+@Data
 public abstract class Person {
 
     @Id
