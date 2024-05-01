@@ -2,10 +2,14 @@ package ftn.eschool.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.Set;
 
 //Lombok
+@Data
+@EqualsAndHashCode(callSuper = true)
+
 @Entity
 public class Student extends Person {
 
