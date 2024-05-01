@@ -15,6 +15,8 @@ public abstract class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+
+    @Enumerated(EnumType.STRING)
     private Gender gender;
     private String firstName;
     private String lastName;

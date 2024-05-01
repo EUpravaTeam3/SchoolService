@@ -21,7 +21,9 @@ public class EducationalSpecialization {
 
     private String name;
 
+
     // Duration in years 8, 4, 3
+    @Enumerated(EnumType.STRING)
     private SpecializationDuration duration;
 
     @ManyToOne

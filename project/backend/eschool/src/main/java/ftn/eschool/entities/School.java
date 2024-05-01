@@ -21,6 +21,7 @@ public class School {
 
     private String name;
 
+    @Enumerated(EnumType.STRING)
     private SchoolType type;
 
     @OneToMany(mappedBy = "school")
