@@ -1,11 +1,8 @@
 package ftn.eschool.entities;
-
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 // lombok
 @RequiredArgsConstructor
@@ -16,7 +13,7 @@ public class Mark {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    private String id;
 
     @ManyToOne
     @JoinColumn(name = "subject_id", nullable = false)

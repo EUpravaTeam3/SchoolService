@@ -16,8 +16,8 @@ public class Student extends Person {
     @ManyToMany
     @JoinTable(
             name = "syllabus_student",
-            joinColumns = @JoinColumn(name = "syllabus_id"),
-            inverseJoinColumns = @JoinColumn(name = "student_id")
+            joinColumns = @JoinColumn(name = "student_id"),
+            inverseJoinColumns = @JoinColumn(name = "syllabus_id")
     )
     private Set<Syllabus> syllabi;
 

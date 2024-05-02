@@ -1,11 +1,8 @@
 package ftn.eschool.entities;
-
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-
 import java.util.Set;
-import java.util.UUID;
 
 // lombok
 @RequiredArgsConstructor
@@ -16,7 +13,7 @@ public class Subject {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    private String id;
 
     @ManyToOne
     @JoinColumn(name = "syllabus_id")
