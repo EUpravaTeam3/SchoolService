@@ -100,26 +100,26 @@ VALUES ('6ee28e53-ab7b-4093-9000-1407d859a640', 'Subject7', '88ec54bc-dae0-4677-
 
 
 -- Create Syllabus to Student connection
-INSERT INTO eschooldb.syllabus_student (syllabus_id, student_id)
-VALUES ('88ec54bc-dae0-4677-9d48-6281052ea28b', '71c27ec0-78a0-44c1-b572-98152150772a');
+INSERT INTO eschooldb.student_syllabus (id, syllabus_id, student_id, semester, finalized)
+VALUES ('f9fb4134-f012-4b19-9c5b-fafed8fdf069', '88ec54bc-dae0-4677-9d48-6281052ea28b', '71c27ec0-78a0-44c1-b572-98152150772a', 'FIRST', false);
 
-INSERT INTO eschooldb.syllabus_student (syllabus_id, student_id)
-VALUES ('88ec54bc-dae0-4677-9d48-6281052ea28b', 'dc54c86d-db9c-4232-9b60-f3b1859bdcd7');
+INSERT INTO eschooldb.student_syllabus (id, syllabus_id, student_id, semester, finalized)
+VALUES ('f2954b97-6043-4772-b085-f0ff7d2775cb', '88ec54bc-dae0-4677-9d48-6281052ea28b', 'dc54c86d-db9c-4232-9b60-f3b1859bdcd7', 'FIRST', false);
 
-INSERT INTO eschooldb.syllabus_student (syllabus_id, student_id)
-VALUES ('c6831611-4334-4f07-8105-3875b6372f3b', '71c27ec0-78a0-44c1-b572-98152150772a');
+INSERT INTO eschooldb.student_syllabus (id, syllabus_id, student_id, semester, finalized)
+VALUES ('053a6f46-92f4-43ed-814b-4842c51538be', 'c6831611-4334-4f07-8105-3875b6372f3b', '71c27ec0-78a0-44c1-b572-98152150772a', 'FIRST', false);
 
-INSERT INTO eschooldb.syllabus_student (syllabus_id, student_id)
-VALUES ('c6831611-4334-4f07-8105-3875b6372f3b', 'dc54c86d-db9c-4232-9b60-f3b1859bdcd7');
+INSERT INTO eschooldb.student_syllabus (id, syllabus_id, student_id, semester, finalized)
+VALUES ('770da62f-ae19-4ef2-8e45-32a6d2027fdc', 'c6831611-4334-4f07-8105-3875b6372f3b', 'dc54c86d-db9c-4232-9b60-f3b1859bdcd7', 'FIRST', false);
 
-INSERT INTO eschooldb.syllabus_student (syllabus_id, student_id)
-VALUES ('ad92705e-657a-4a5d-ac3b-80379fa990d8', '71c27ec0-78a0-44c1-b572-98152150772a');
+INSERT INTO eschooldb.student_syllabus (id, syllabus_id, student_id, semester, finalized)
+VALUES ('27b57b07-ce76-4c1b-b657-3b80bb22b3d7', 'ad92705e-657a-4a5d-ac3b-80379fa990d8', '71c27ec0-78a0-44c1-b572-98152150772a', 'FIRST', false);
 
-INSERT INTO eschooldb.syllabus_student (syllabus_id, student_id)
-VALUES ('ad92705e-657a-4a5d-ac3b-80379fa990d8', 'dc54c86d-db9c-4232-9b60-f3b1859bdcd7');
+INSERT INTO eschooldb.student_syllabus (id, syllabus_id, student_id, semester, finalized)
+VALUES ('7a14c585-492d-488d-af11-cc1dc0b0fe34', 'ad92705e-657a-4a5d-ac3b-80379fa990d8', 'dc54c86d-db9c-4232-9b60-f3b1859bdcd7', 'FIRST', false);
 
-INSERT INTO eschooldb.syllabus_student (syllabus_id, student_id)
-VALUES ('52eae039-02dc-4016-a3fc-e7156147b8bf', '71c27ec0-78a0-44c1-b572-98152150772a');
+INSERT INTO eschooldb.student_syllabus (id, syllabus_id, student_id, semester, finalized)
+VALUES ('a171409a-e3e9-49ac-9a4b-440cdcb13350', '52eae039-02dc-4016-a3fc-e7156147b8bf', '71c27ec0-78a0-44c1-b572-98152150772a', 'FIRST', false);
 
-INSERT INTO eschooldb.syllabus_student (syllabus_id, student_id)
-VALUES ('52eae039-02dc-4016-a3fc-e7156147b8bf', 'dc54c86d-db9c-4232-9b60-f3b1859bdcd7');
+INSERT INTO eschooldb.student_syllabus (id, syllabus_id, student_id, semester, finalized)
+VALUES ('a59749f4-3c15-45a0-89d3-fa93cf98e358', '52eae039-02dc-4016-a3fc-e7156147b8bf', 'dc54c86d-db9c-4232-9b60-f3b1859bdcd7', 'FIRST', false);

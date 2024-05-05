@@ -3,6 +3,7 @@ package ftn.eschool.entities;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import java.util.Set;
 
@@ -13,20 +14,20 @@ import java.util.Set;
 @Entity
 public class Student extends Person {
 
-    @ManyToMany
-    @JoinTable(
-            name = "syllabus_student",
-            joinColumns = @JoinColumn(name = "student_id"),
-            inverseJoinColumns = @JoinColumn(name = "syllabus_id")
-    )
-    private Set<Syllabus> syllabi;
-
     @OneToMany(mappedBy = "student")
     private Set<Mark> marks;
 
     private Boolean finishedElementarySchool;
 
     private Boolean finishedHighSchool;
+
+    @OneToMany(mappedBy = "student")
+    private Set<FinalExam> finalExams;
+
+    @ToString.Exclude
+    @OneToMany(mappedBy = "student")
+    private Set<StudentSyllabus> studentSyllabus;
+
 
 
 }

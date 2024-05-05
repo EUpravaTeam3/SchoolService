@@ -2,11 +2,15 @@ package ftn.eschool.entities;
 import ftn.eschool.entities.enums.Gender;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 import java.time.LocalDateTime;
+
+@Data
+@EqualsAndHashCode(of = {"id"})
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@Data
 public abstract class Person {
 
     @Id

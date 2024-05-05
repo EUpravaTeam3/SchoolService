@@ -3,6 +3,8 @@ import ftn.eschool.entities.enums.SpecializationDuration;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import lombok.ToString;
+
 import java.util.Set;
 
 // lombok
@@ -26,6 +28,7 @@ public class EducationalSpecialization {
     @JoinColumn(name = "school_id", nullable = false)
     private School school;
 
+    @ToString.Exclude
     @OneToMany(mappedBy = "educationalSpecialization")
     private Set<Syllabus> syllabi;
 }

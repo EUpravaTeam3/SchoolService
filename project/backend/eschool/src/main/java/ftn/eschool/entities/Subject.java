@@ -2,6 +2,8 @@ package ftn.eschool.entities;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import lombok.ToString;
+
 import java.util.Set;
 
 // lombok
@@ -15,10 +17,12 @@ public class Subject {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
+    @ToString.Exclude
     @ManyToOne
     @JoinColumn(name = "syllabus_id")
     private Syllabus syllabus;
 
+    @ToString.Exclude
     @OneToMany(mappedBy = "subject")
     private Set<Mark> marks;
 
