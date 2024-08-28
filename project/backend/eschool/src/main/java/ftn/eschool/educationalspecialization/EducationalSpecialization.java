@@ -1,5 +1,6 @@
-package ftn.eschool.entities;
-import ftn.eschool.entities.enums.SpecializationDuration;
+package ftn.eschool.educationalspecialization;
+import ftn.eschool.school.School;
+import ftn.eschool.syllabus.Syllabus;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;

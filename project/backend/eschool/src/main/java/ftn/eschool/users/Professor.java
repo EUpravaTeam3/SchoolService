@@ -1,4 +1,5 @@
-package ftn.eschool.entities;
+package ftn.eschool.users;
+import ftn.eschool.mark.Mark;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import lombok.Data;

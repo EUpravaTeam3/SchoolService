@@ -1,4 +1,6 @@
-package ftn.eschool.entities;
+package ftn.eschool.mark;
+import ftn.eschool.users.Person;
+import ftn.eschool.subject.Subject;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;

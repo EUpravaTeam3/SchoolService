@@ -1,4 +1,4 @@
-package ftn.eschool.entities.enums;
+package ftn.eschool.studentsyllabus;
 
 public enum Semester {
     FIRST,

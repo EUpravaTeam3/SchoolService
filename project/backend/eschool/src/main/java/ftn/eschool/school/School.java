@@ -1,5 +1,5 @@
-package ftn.eschool.entities;
-import ftn.eschool.entities.enums.SchoolType;
+package ftn.eschool.school;
+import ftn.eschool.educationalspecialization.EducationalSpecialization;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;

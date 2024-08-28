@@ -1,18 +1,19 @@
-package ftn.eschool.entities;
+package ftn.eschool.finalexam;
 
-import ftn.eschool.entities.enums.Semester;
+import ftn.eschool.school.SchoolType;
+import ftn.eschool.users.Student;
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
+
+import java.time.LocalDate;
 
 // lombok
 @RequiredArgsConstructor
 @Data
-@EqualsAndHashCode(of = {"id"})
 
 @Entity
-public class StudentSyllabus {
+public class FinalExam {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -22,12 +23,12 @@ public class StudentSyllabus {
     @JoinColumn(name = "student_id", nullable = false)
     private Student student;
 
-    @ManyToOne
-    @JoinColumn(name = "syllabus_id", nullable = false)
-    private Syllabus syllabus;
+    private String name;
+
+    private Integer markValue;
 
     @Enumerated(EnumType.STRING)
-    private Semester semester;
+    private SchoolType schoolType;
 
-    private Boolean finalized;
+    private LocalDate dateTaken;
 }

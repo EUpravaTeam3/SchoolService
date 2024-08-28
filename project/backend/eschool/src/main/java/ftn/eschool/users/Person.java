@@ -1,5 +1,4 @@
-package ftn.eschool.entities;
-import ftn.eschool.entities.enums.Gender;
+package ftn.eschool.users;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

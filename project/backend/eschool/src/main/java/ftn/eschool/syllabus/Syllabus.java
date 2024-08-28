@@ -1,4 +1,7 @@
-package ftn.eschool.entities;
+package ftn.eschool.syllabus;
+import ftn.eschool.educationalspecialization.EducationalSpecialization;
+import ftn.eschool.studentsyllabus.StudentSyllabus;
+import ftn.eschool.subject.Subject;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

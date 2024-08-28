@@ -1,4 +1,4 @@
-package ftn.eschool.entities.enums;
+package ftn.eschool.educationalspecialization;
 
 public enum SpecializationDuration {
     // Represents number of years

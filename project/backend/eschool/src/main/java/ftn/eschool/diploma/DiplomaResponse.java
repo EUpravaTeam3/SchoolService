@@ -1,4 +1,4 @@
-package ftn.eschool.web.dtos;
+package ftn.eschool.diploma;
 
 import lombok.Data;
 
@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.util.Set;
 
 @Data
-public class DiplomaDto {
+public class DiplomaResponse {
 
     private String firstName;
     private String lastName;

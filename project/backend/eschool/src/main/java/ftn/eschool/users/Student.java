@@ -1,5 +1,8 @@
-package ftn.eschool.entities;
+package ftn.eschool.users;
 
+import ftn.eschool.finalexam.FinalExam;
+import ftn.eschool.studentsyllabus.StudentSyllabus;
+import ftn.eschool.mark.Mark;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

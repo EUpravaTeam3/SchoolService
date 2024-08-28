@@ -1,6 +1,4 @@
-package ftn.eschool.web.controllers;
-import ftn.eschool.services.DiplomaService;
-import ftn.eschool.web.dtos.DiplomaDto;
+package ftn.eschool.diploma;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,7 +14,7 @@ public class DiplomaController {
     private final DiplomaService diplomaService;
 
     @GetMapping("person/{personUCN}")
-    public DiplomaDto getDiploma(@PathVariable("personUCN") String ucn) {
+    public DiplomaResponse getDiploma(@PathVariable("personUCN") String ucn) {
         return diplomaService.findStudentByUCN(ucn);
     }
 
