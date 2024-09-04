@@ -12,3 +12,7 @@ services:
     networks:
       - eschool
     restart: unless-stopped
+
+networks:
+  eschool:
+    driver: bridge
