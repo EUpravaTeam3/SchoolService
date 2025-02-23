@@ -1,14 +1,17 @@
 import './App.css'
 import { Button } from './components/ui/button';
+import Navigation from "./components/navigation/Navigation";
+
 
 function App() {
 
 
   return (
     <>
-        <h1 className='text-5xl text-center p-16'>Test</h1>
-        <Button variant="default">Button</Button>
-        <Button variant="milos">Button</Button>
+        <Navigation></Navigation>
+        {/*<h1 className='text-5xl text-center p-16'>Test</h1>*/}
+        {/*<Button variant="default">Button</Button>*/}
+        {/*<Button variant="milos">Button</Button>*/}
     </>
   )
 }
