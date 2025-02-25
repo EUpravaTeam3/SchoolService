@@ -4,7 +4,7 @@ import {
     NavigationMenuLink,
     NavigationMenuList, NavigationMenuTrigger,
 } from "../ui/navigation-menu";
-import {cn} from "../../lib/utils"; // or wherever your base menu is
+import {cn} from "@/lib/utils";
 
 function Navigation() {
     return (
@@ -32,7 +32,7 @@ function Navigation() {
                                         <div className="text-xl font-bold leading-none">
                                             e-school
                                         </div>
-                                        <p className="line-clamp-2 text-base leading-snug text-muted-foreground">
+                                        <p className="text-base leading-snug text-muted-foreground">
                                             Online platform for primary and secondary students, offering interactive lessons, progress tracking, and teacher support.
                                         </p>
                                     </NavigationMenuLink>
@@ -48,7 +48,7 @@ function Navigation() {
                                         <div className="text-xl font-bold leading-none">
                                             e-college
                                         </div>
-                                        <p className="line-clamp-2 text-base leading-snug text-muted-foreground">
+                                        <p className="text-base leading-snug text-muted-foreground">
                                             A digital campus for higher education, streamlining course registration, virtual classrooms, and collaborative study tools.
                                         </p>
                                     </NavigationMenuLink>
@@ -64,7 +64,7 @@ function Navigation() {
                                         <div className="text-xl font-bold leading-none">
                                             e-employment
                                         </div>
-                                        <p className="line-clamp-2 text-base leading-snug text-muted-foreground">
+                                        <p className="text-base leading-snug text-muted-foreground">
                                             A job portal that connects job seekers with employers, featuring advanced search options, application tracking, and career advice.
                                         </p>
                                     </NavigationMenuLink>
@@ -80,7 +80,7 @@ function Navigation() {
                                         <div className="text-xl font-bold leading-none">
                                             e-business
                                         </div>
-                                        <p className="line-clamp-2 text-base leading-snug text-muted-foreground">
+                                        <p className="text-base leading-snug text-muted-foreground">
                                             A specialized service from the Serbian Business Registers Agency (APR), providing user-friendly business registration, training, and compliance resources.
                                         </p>
                                     </NavigationMenuLink>

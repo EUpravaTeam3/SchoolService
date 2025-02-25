@@ -11,18 +11,18 @@ public class DiplomaResponse {
     private String firstName;
     private String lastName;
     private String UCN;
-    private Set<SchoolYearDto> elementarySchoolYears;
-    private Set<SchoolYearDto> highSchoolYears;
+    private Set<SchoolYearResponse> elementarySchoolYears;
+    private Set<SchoolYearResponse> highSchoolYears;
 
     @Data
-    private class SchoolYearDto {
+    private class SchoolYearResponse {
         private LocalDate date;
-        private Set<SubjectDto> subjects;
+        private Set<SubjectResponse> subjects;
         private Double averageMark;
     }
 
     @Data
-    private class SubjectDto {
+    private class SubjectResponse {
         private String name;
         private String markValue;
     }

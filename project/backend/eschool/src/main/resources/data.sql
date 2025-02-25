@@ -1,4 +1,4 @@
--- Create Teachers
+# Create Teachers
 INSERT INTO eschooldb.person (id, ucn, date_of_birth, first_name, gender, last_name, phone_number)
 VALUES ('550e8400-e29b-41d4-a716-446655440000', '1', '1990-05-02 00:45:59.000000', 'TeacherFN1', 'MALE', 'TeacherLN1', null);
 
@@ -17,7 +17,7 @@ VALUES ('38400000-8cf0-11bd-b23e-10b96e4ef00d', '3', '1985-12-04 00:43:59.000000
 INSERT INTO eschooldb.professor VALUES ('38400000-8cf0-11bd-b23e-10b96e4ef00d');
 
 
--- Create Students
+# Create Students
 INSERT INTO eschooldb.person (id, ucn, date_of_birth, first_name, gender, last_name, phone_number)
 VALUES ('71c27ec0-78a0-44c1-b572-98152150772a', '4', '2005-05-05 00:45:59.000000', 'StudentFN1', 'MALE', 'StudentLN1', null);
 
@@ -46,7 +46,7 @@ INSERT INTO eschooldb.student (id, finished_elementary_school, finished_high_sch
 VALUES ('995ee552-0110-4c05-9330-a34c197e6725', false, false);
 
 
--- Create Schools
+# Create Schools
 INSERT INTO eschooldb.school (id, name, type)
 VALUES ('461c5d1b-2710-438b-8375-765f68d16232', 'ElementarySchool1', 'ELEMENTARY');
 
@@ -54,7 +54,7 @@ INSERT INTO eschooldb.school (id, name, type)
 VALUES ('fa5d9007-784b-43c5-bbc1-82f5754b1c61', 'HighSchool1', 'HIGH');
 
 
--- Create EducationalSpecializations
+# Create EducationalSpecializations
 INSERT INTO eschooldb.educational_specialization (id, duration, name, school_id)
 VALUES ('75526e2a-9096-482c-a665-4fe7cd13e463', 'EIGHT', 'ElementaryEducation', '461c5d1b-2710-438b-8375-765f68d16232');
 
@@ -62,7 +62,7 @@ INSERT INTO eschooldb.educational_specialization (id, duration, name, school_id)
 VALUES ('93c760c5-a2f6-4571-9308-b165f7c3edfa', 'FOUR', 'System Administrator', 'fa5d9007-784b-43c5-bbc1-82f5754b1c61');
 
 
--- Create Syllabi
+# Create Syllabi
 INSERT INTO eschooldb.syllabus (id, year_of_introduction, year_order, educational_specialization_id)
 VALUES ('88ec54bc-dae0-4677-9d48-6281052ea28b', 2021, 1, '93c760c5-a2f6-4571-9308-b165f7c3edfa');
 
@@ -76,7 +76,7 @@ INSERT INTO eschooldb.syllabus (id, year_of_introduction, year_order, educationa
 VALUES ('52eae039-02dc-4016-a3fc-e7156147b8bf', 2024, 4, '93c760c5-a2f6-4571-9308-b165f7c3edfa');
 
 
--- Create Subjects
+# Create Subjects
 INSERT INTO eschooldb.subject (id, name, syllabus_id)
 VALUES ('ddb2246e-8b4e-4c9d-9083-83e01648b646', 'Subject1', '88ec54bc-dae0-4677-9d48-6281052ea28b');
 
@@ -99,7 +99,7 @@ INSERT INTO eschooldb.subject (id, name, syllabus_id)
 VALUES ('6ee28e53-ab7b-4093-9000-1407d859a640', 'Subject7', '88ec54bc-dae0-4677-9d48-6281052ea28b');
 
 
--- Create Syllabus to Student connection
+# Create Syllabus to Student connection
 INSERT INTO eschooldb.student_syllabus (id, syllabus_id, student_id, semester, finalized)
 VALUES ('f9fb4134-f012-4b19-9c5b-fafed8fdf069', '88ec54bc-dae0-4677-9d48-6281052ea28b', '71c27ec0-78a0-44c1-b572-98152150772a', 'FIRST', false);
 
@@ -123,3 +123,9 @@ VALUES ('a171409a-e3e9-49ac-9a4b-440cdcb13350', '52eae039-02dc-4016-a3fc-e715614
 
 INSERT INTO eschooldb.student_syllabus (id, syllabus_id, student_id, semester, finalized)
 VALUES ('a59749f4-3c15-45a0-89d3-fa93cf98e358', '52eae039-02dc-4016-a3fc-e7156147b8bf', 'dc54c86d-db9c-4232-9b60-f3b1859bdcd7', 'FIRST', false);
+
+# Create marks
+INSERT INTO eschooldb.mark (id, deleted, local_date_time, value, professor_id, student_id, subject_id) VALUES ('42a3bad9-a388-4105-b411-4eb09d4d9d73', false, '2025-02-22 16:50:22.000000', 3, '38400000-8cf0-11bd-b23e-10b96e4ef00d', '71c27ec0-78a0-44c1-b572-98152150772a', '05e3e417-7c3b-4bb9-b279-277d36774d98');
+INSERT INTO eschooldb.mark (id, deleted, local_date_time, value, professor_id, student_id, subject_id) VALUES ('a07e33b5-6cab-48c5-a59d-f4cd6ae4a9d9', false, '2025-02-25 16:39:41.000000', 5, '38400000-8cf0-11bd-b23e-10b96e4ef00d', '71c27ec0-78a0-44c1-b572-98152150772a', '05e3e417-7c3b-4bb9-b279-277d36774d98');
+INSERT INTO eschooldb.mark (id, deleted, local_date_time, value, professor_id, student_id, subject_id) VALUES ('bab770f1-4479-4a41-91ae-414bfffe4b4d', false, '2025-02-20 16:50:26.000000', 2, '38400000-8cf0-11bd-b23e-10b96e4ef00d', '71c27ec0-78a0-44c1-b572-98152150772a', '05e3e417-7c3b-4bb9-b279-277d36774d98');
+INSERT INTO eschooldb.mark (id, deleted, local_date_time, value, professor_id, student_id, subject_id) VALUES ('cd9d6c10-54c8-4d8c-90e6-40ed047a06a5', false, '2025-02-24 16:57:14.000000', 4, '38400000-8cf0-11bd-b23e-10b96e4ef00d', '71c27ec0-78a0-44c1-b572-98152150772a', '05e3e417-7c3b-4bb9-b279-277d36774d98');
