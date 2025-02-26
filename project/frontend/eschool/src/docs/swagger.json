@@ -1,0 +1,213 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "OpenApi specification - Eschool",
+    "description": "OpenApi documentation for Eschool",
+    "contact": {
+      "name": "Milos Vlku",
+      "url": "https://www.linkedin.com/in/milos-vlku",
+      "email": "milos.vlku.learning@gmail.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080",
+      "description": "Local ENV"
+    }
+  ],
+  "paths": {
+    "/marks": {
+      "get": {
+        "tags": [
+          "mark-controller"
+        ],
+        "operationId": "getMarks",
+        "parameters": [
+          {
+            "name": "criteria",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/MarkSearchCriteria"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MarkResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/diplomas/person/{personUCN}": {
+      "get": {
+        "tags": [
+          "diploma-controller"
+        ],
+        "operationId": "getDiploma",
+        "parameters": [
+          {
+            "name": "personUCN",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiplomaResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "MarkSearchCriteria": {
+        "type": "object",
+        "properties": {
+          "subjectId": {
+            "type": "string"
+          },
+          "professorId": {
+            "type": "string"
+          },
+          "studentId": {
+            "type": "string"
+          }
+        }
+      },
+      "MarkResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "subject": {
+            "$ref": "#/components/schemas/SubjectResponse"
+          },
+          "professor": {
+            "$ref": "#/components/schemas/ProfessorResponse"
+          },
+          "student": {
+            "$ref": "#/components/schemas/StudentResponse"
+          },
+          "value": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "localDateTime": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "ProfessorResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          }
+        }
+      },
+      "StudentResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          }
+        }
+      },
+      "SubjectResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "subjectName": {
+            "type": "string"
+          }
+        }
+      },
+      "DiplomaResponse": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "elementarySchoolYears": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SchoolYearResponse"
+            }
+          },
+          "highSchoolYears": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SchoolYearResponse"
+            }
+          },
+          "ucn": {
+            "type": "string"
+          }
+        }
+      },
+      "SchoolYearResponse": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "subjects": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SubjectResponse"
+            }
+          },
+          "averageMark": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      }
+    }
+  }
+}

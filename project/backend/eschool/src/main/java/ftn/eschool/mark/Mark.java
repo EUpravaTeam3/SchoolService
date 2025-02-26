@@ -1,6 +1,8 @@
 package ftn.eschool.mark;
 import ftn.eschool.users.Person;
 import ftn.eschool.subject.Subject;
+import ftn.eschool.users.Professor;
+import ftn.eschool.users.Student;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
@@ -23,11 +25,11 @@ public class Mark {
 
     @ManyToOne
     @JoinColumn(name = "professor_id", nullable = false)
-    private Person professor;
+    private Professor professor;
 
     @ManyToOne
     @JoinColumn(name = "student_id", nullable = false)
-    private Person student;
+    private Student student;
 
     private Integer value;
 

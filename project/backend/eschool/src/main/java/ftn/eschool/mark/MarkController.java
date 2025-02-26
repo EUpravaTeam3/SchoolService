@@ -15,10 +15,11 @@ import java.util.List;
 public class MarkController {
 
     private final MarkService markService;
+    private final MarkMapper markMapper;
 
     @GetMapping
-    public List<Mark> getMarks(@RequestBody MarkSearchCriteria criteria) {
-        return markService.searchMarks(criteria);
+    public List<MarkResponse> getMarks(@RequestBody MarkSearchCriteria criteria) {
+        return markMapper.toMarkResponse(markService.searchMarks(criteria));
     }
 
 }
