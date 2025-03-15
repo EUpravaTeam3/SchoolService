@@ -4,7 +4,7 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-public class MarkSearchCriteria {
+public class SearchMarkCriteria {
     private String subjectId;
     private String professorId;
     private String studentId;

@@ -1,5 +1,4 @@
 package ftn.eschool.mark;
-import ftn.eschool.users.Person;
 import ftn.eschool.subject.Subject;
 import ftn.eschool.users.Professor;
 import ftn.eschool.users.Student;
@@ -35,6 +34,5 @@ public class Mark {
 
     private LocalDateTime localDateTime;
 
-    private Boolean deleted;
-
+    private boolean deleted = false;
 }

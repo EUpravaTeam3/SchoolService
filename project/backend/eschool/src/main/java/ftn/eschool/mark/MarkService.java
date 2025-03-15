@@ -11,9 +11,11 @@ public class MarkService {
 
     private final MarkRepository markRepository;
 
-    public List<Mark> searchMarks(MarkSearchCriteria criteria) {
+    public List<Mark> searchMarks(SearchMarkCriteria criteria) {
         return markRepository.searchMarks(criteria);
     }
 
-
+    public Mark saveMark(Mark newMark) {
+        return markRepository.save(newMark);
+    }
 }

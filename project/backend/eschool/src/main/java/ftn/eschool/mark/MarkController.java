@@ -1,10 +1,9 @@
 package ftn.eschool.mark;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,8 +17,19 @@ public class MarkController {
     private final MarkMapper markMapper;
 
     @GetMapping
-    public List<MarkResponse> getMarks(@RequestBody MarkSearchCriteria criteria) {
+    @ResponseStatus(HttpStatus.OK)
+    public List<MarkResponse> getMarks(@RequestBody SearchMarkCriteria criteria) {
         return markMapper.toMarkResponse(markService.searchMarks(criteria));
     }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public MarkResponse saveMark(@Valid @RequestBody SaveMarkRequest saveMarkRequest) {
+
+        Mark newMark = markMapper.toMark(saveMarkRequest);
+        Mark savedMark = markService.saveMark(newMark);
+        return markMapper.toMarkResponse(savedMark);
+    }
+
 
 }

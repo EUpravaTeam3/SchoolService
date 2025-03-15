@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public  interface MarkRepository extends JpaRepository<Mark, String> {
+public interface MarkRepository extends JpaRepository<Mark, String> {
 
     @Query(value = """
         SELECT * FROM mark
@@ -16,5 +16,5 @@ public  interface MarkRepository extends JpaRepository<Mark, String> {
         AND (:#{#searchCriteria.professorId} IS NULL OR professor_id = :#{#searchCriteria.professorId})
         AND (:#{#searchCriteria.studentId} IS NULL OR student_id = :#{#searchCriteria.studentId})
     """, nativeQuery = true)
-    List<Mark> searchMarks(@Param("searchCriteria") MarkSearchCriteria searchCriteria);
+    List<Mark> searchMarks(@Param("searchCriteria") SearchMarkCriteria searchCriteria);
 }
